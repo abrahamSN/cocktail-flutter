@@ -1,6 +1,6 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:skeleton_text/skeleton_text.dart';
 
 import '../../blocs/explore_bloc.dart';
 import '../../models/drink_model.dart';
@@ -46,7 +46,16 @@ class Explore extends StatelessWidget {
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 if (!snapshot.hasData) {
-                  return Text('loading lah cok');
+                  return SkeletonAnimation(
+                    child: Container(
+                      margin: EdgeInsets.all(5.0),
+                      width: double.infinity,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                      ),
+                    ),
+                  );
                 }
 
                 final drinkModel = DrinkModel.fromJson(snapshot.data[index]);
