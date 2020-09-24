@@ -34,6 +34,9 @@ dependencies:
   skeleton_text: ^1.0.0
   cached_network_image: ^2.3.2+1
   url_launcher: ^5.7.1
+  grpc: ^2.3.0
+  protobuf: ^1.0.1
+  agora_rtm: ^0.9.12
 
 dev_dependencies:
   flutter_test:

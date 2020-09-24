@@ -23,13 +23,17 @@ class HomeProvider extends InheritedWidget {
 
 class HomeBloc {
   final _navItem = PublishSubject<NavBarItem>();
+  final _connStat = PublishSubject<bool>();
 
   Stream<NavBarItem> get navItem => _navItem.stream;
 
+  Stream<bool> get connStat => _connStat.stream;
+
   NavBarItem defaultItem = NavBarItem.EXPLORE;
 
+
   void pickItem(int i) {
-    switch(i) {
+    switch (i) {
       case 0:
         _navItem.sink.add(NavBarItem.EXPLORE);
         break;
@@ -37,12 +41,13 @@ class HomeBloc {
         _navItem.sink.add(NavBarItem.SEARCH);
         break;
       case 2:
-        _navItem.sink.add(NavBarItem.CHAT);
+        _navItem.sink.add(NavBarItem.COUNTER);
         break;
     }
   }
 
   dispose() {
     _navItem.close();
+    _connStat.close();
   }
 }

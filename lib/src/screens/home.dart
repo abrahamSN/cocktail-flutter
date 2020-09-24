@@ -2,6 +2,7 @@ import 'package:cocktail_flutter/src/blocs/blocs.dart';
 import 'package:cocktail_flutter/src/util/type_data.dart';
 import 'package:flutter/material.dart';
 
+import './counter/counter.dart';
 import './explores/explore.dart';
 import './search/search.dart';
 
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
       initialData: bloc.defaultItem,
       // ignore: missing_return
       builder: (BuildContext context, AsyncSnapshot snapshot) {
-        switch(snapshot.data) {
+        switch (snapshot.data) {
           case NavBarItem.EXPLORE:
             eBloc.fetchAllData('a');
             return Explore();
@@ -34,8 +35,8 @@ class Home extends StatelessWidget {
             eBloc.fetchAllData('a');
             return Search();
             break;
-          case NavBarItem.CHAT:
-            return Text('chat');
+          case NavBarItem.COUNTER:
+            return Counter();
             break;
         }
       },
@@ -53,15 +54,15 @@ class Home extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.explore),
-              title: Text('Explore'),
+              label: 'Explore',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              title: Text('Search'),
+              label: 'Search',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.chat_bubble_outline),
-              title: Text('Chat'),
+              icon: Icon(Icons.add_box),
+              label: 'Counter',
             ),
           ],
         );

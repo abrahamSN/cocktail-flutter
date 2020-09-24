@@ -1,6 +1,5 @@
 import '../resources.dart';
 
-import '../../models/drink_model.dart';
 import '../../util/api_client.dart';
 
 class CocktailApiProvider implements Source {

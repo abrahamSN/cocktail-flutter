@@ -9,16 +9,18 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return HomeProvider(
       child: ExploreProvider(
-        child: MaterialApp(
-          title: 'Cocktail Flutter',
-          initialRoute: '/',
-          // theme: ThemeData(
-          // primaryColor: Colors.cyanAccent,
-          // ),
-          routes: {
-            '/': (context) => Home(),
-            '/drink_detail': (context) => DrinkDetails(),
-          },
+        child: CounterProvider(
+          child: MaterialApp(
+            title: 'Cocktail Flutter',
+            initialRoute: '/',
+            // theme: ThemeData(
+            // primaryColor: Colors.cyanAccent,
+            // ),
+            routes: {
+              '/': (context) => Home(),
+              '/drink_detail': (context) => DrinkDetails(),
+            },
+          ),
         ),
       ),
     );
