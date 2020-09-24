@@ -1,1 +1,1 @@
-enum NavBarItem { EXPLORE, SEARCH }
+enum NavBarItem { EXPLORE, SEARCH, CHAT }

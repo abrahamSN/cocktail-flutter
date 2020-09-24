@@ -7,11 +7,16 @@ class CocktailApiProvider implements Source {
   ApiClient apiClient = ApiClient();
 
   @override
-  Future<List> fetchList() async {
+  Future<List> fetchList(String param) async {
     // TODO: implement fetchList
-    final path = 'search.php?s=a&s=b&s=c&s=d&s=e&s=f&s=d';
+    Map<String, dynamic> data = {
+      'path': 'search.php',
+      'queryParam': {
+        's': param,
+      },
+    };
 
-    final res = await apiClient.get(path);
+    final res = await apiClient.get(data);
 
     return res.data['drinks'];
   }

@@ -36,6 +36,9 @@ class HomeBloc {
       case 1:
         _navItem.sink.add(NavBarItem.SEARCH);
         break;
+      case 2:
+        _navItem.sink.add(NavBarItem.CHAT);
+        break;
     }
   }
 
