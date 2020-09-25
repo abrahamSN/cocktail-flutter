@@ -1,16 +1,16 @@
 # cocktail_flutter
 
-A new Flutter application.
+A Cocktail app using flutter.
 
-## Getting Started
+## Technologies
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Using a few tech stack:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- RxDart
+- Bloc
+- gRPC
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For cocktails data, this project using [CocktailDb](https://www.thecocktaildb.com/), 
+and for gRPC sample using my own [golang sample code](https://github.com/abrahamSN/cocktail_server).
