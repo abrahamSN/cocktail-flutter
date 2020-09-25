@@ -13,9 +13,6 @@ class App extends StatelessWidget {
           child: MaterialApp(
             title: 'Cocktail Flutter',
             initialRoute: '/',
-            // theme: ThemeData(
-            // primaryColor: Colors.cyanAccent,
-            // ),
             routes: {
               '/': (context) => Home(),
               '/drink_detail': (context) => DrinkDetails(),

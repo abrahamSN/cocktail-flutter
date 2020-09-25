@@ -8,17 +8,18 @@ import '../../widgets/drink_container.dart';
 class Search extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final media = MediaQuery.of(context);
     final bloc = ExploreProvider.of(context);
     return Scaffold(
-      body: _bodyBuilder(bloc),
+      body: _bodyBuilder(media, bloc),
     );
   }
 
-  Widget _bodyBuilder(ExploreBloc bloc) {
+  Widget _bodyBuilder(MediaQueryData media, ExploreBloc bloc) {
     return CustomScrollView(
       slivers: [
         _appBar(bloc),
-        _listSearch(bloc),
+        _listSearch(media, bloc),
       ],
     );
   }
@@ -43,7 +44,7 @@ class Search extends StatelessWidget {
     );
   }
 
-  Widget _listSearch(ExploreBloc bloc) {
+  Widget _listSearch(MediaQueryData media, ExploreBloc bloc) {
     return StreamBuilder(
       stream: bloc.cocktailList,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -54,7 +55,7 @@ class Search extends StatelessWidget {
           ),
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: media.orientation == Orientation.portrait ? 2 : 4,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {

@@ -7,6 +7,7 @@ import '../../models/models.dart';
 class DrinkDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final media = MediaQuery.of(context);
     final bloc = ExploreProvider.of(context);
     Map args = ModalRoute.of(context).settings.arguments;
     DrinkModel model = args['model'];
@@ -14,7 +15,7 @@ class DrinkDetails extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          _appBar(bloc, model),
+          _appBar(media, bloc, model),
           _ingredients(model),
           _instructions(model),
           _serve(model),
@@ -23,9 +24,9 @@ class DrinkDetails extends StatelessWidget {
     );
   }
 
-  Widget _appBar(ExploreBloc bloc, DrinkModel model) {
+  Widget _appBar(MediaQueryData media, ExploreBloc bloc, DrinkModel model) {
     return SliverAppBar(
-      expandedHeight: 400.0,
+      expandedHeight: media.orientation == Orientation.portrait ? 400.0 : 200.0,
       title: Hero(
         tag: '${model.strDrink}',
         child: Text('${model.strDrink}'),

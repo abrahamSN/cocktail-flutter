@@ -9,13 +9,14 @@ import '../../widgets/drink_container.dart';
 class Explore extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final media = MediaQuery.of(context);
     final bloc = ExploreProvider.of(context);
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           _appBar(),
-          _listCocktail(bloc),
+          _listCocktail(media, bloc),
         ],
       ),
     );
@@ -26,11 +27,12 @@ class Explore extends StatelessWidget {
       centerTitle: true,
       title: Text('Cocktail Flutter'),
       primary: true,
-      floating: debugInstrumentationEnabled,
+      pinned: true,
+      floating: true,
     );
   }
 
-  Widget _listCocktail(ExploreBloc bloc) {
+  Widget _listCocktail(MediaQueryData media, ExploreBloc bloc) {
     return StreamBuilder(
       stream: bloc.cocktailList,
       builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -41,7 +43,7 @@ class Explore extends StatelessWidget {
           ),
           sliver: SliverGrid(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
+              crossAxisCount: media.orientation == Orientation.portrait ? 2 : 4,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
