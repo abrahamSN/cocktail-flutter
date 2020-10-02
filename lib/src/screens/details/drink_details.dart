@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
 import '../../blocs/blocs.dart';
-import '../../models/models.dart';
+import '../../data/model/model.dart';
 
 class DrinkDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context);
-    final bloc = ExploreProvider.of(context);
+    // final bloc = ExploreProvider.of(context);
     Map args = ModalRoute.of(context).settings.arguments;
     DrinkModel model = args['model'];
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          _appBar(media, bloc, model),
+          _appBar(media, model),
           _ingredients(model),
           _instructions(model),
           _serve(model),
@@ -24,7 +24,7 @@ class DrinkDetails extends StatelessWidget {
     );
   }
 
-  Widget _appBar(MediaQueryData media, ExploreBloc bloc, DrinkModel model) {
+  Widget _appBar(MediaQueryData media, DrinkModel model) {
     return SliverAppBar(
       expandedHeight: media.orientation == Orientation.portrait ? 400.0 : 200.0,
       title: Hero(
@@ -116,7 +116,7 @@ class DrinkDetails extends StatelessWidget {
                     ),
                     color: Colors.black54,
                     onPressed: () {
-                      bloc.launchYt(model.strVideo);
+                      // bloc.launchYt(model.strVideo);
                     },
                   ),
                 )

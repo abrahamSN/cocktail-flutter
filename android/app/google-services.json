@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "144216385023",
+    "firebase_url": "https://cocktail-a4568.firebaseio.com",
+    "project_id": "cocktail-a4568",
+    "storage_bucket": "cocktail-a4568.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144216385023:android:04535444087d43c46873ca",
+        "android_client_info": {
+          "package_name": "id.mascode.cocktail_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144216385023-hhm0m9dglga8mol4ovf1am3ejg6b13mt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.mascode.cocktail_flutter",
+            "certificate_hash": "91474d57f27d6624e9a941d45c9e6d02b5db080e"
+          }
+        },
+        {
+          "client_id": "144216385023-sq9622p3tienc284o7v3q479obcu5tsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBS63ykjQul06whue8xrHSVbTfswKV4WiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144216385023-sq9622p3tienc284o7v3q479obcu5tsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

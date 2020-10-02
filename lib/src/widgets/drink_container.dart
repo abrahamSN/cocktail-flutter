@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '../models/drink_model.dart';
+import '../data/model/model.dart';
 
 class DrinkContainer extends StatelessWidget {
   final DrinkModel model;
